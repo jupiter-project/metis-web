@@ -2523,6 +2523,8 @@ class Gravity {
                     ENCRYPT_ALGORITHM: 'aes-256-cbc',
                     ENCRYPT_PASSWORD: password,
                     APP_ACCOUNT_ID: publicKey,
+                    VERSION: 'WEB',
+                    URL_DB: 'mongodb://localhost/gravity_data',
                   };
                   const envVariables = configuration;
                   let envVariablesInString = '';
@@ -2547,9 +2549,9 @@ class Gravity {
                       if (error) {
                         return logger.error(err);
                       }
-                      logger.info('\nSuccess! .gravity.js and .env files generated!');
-                      logger.info('\nPlease write down the 12-word passphrase and account address assigned to your app as well as the password assigned for encryption (See .env or .gravity.js files). If you lose your passphrase or your encryption password, you will lose access to all saved data.');
-                      logger.info('\nIn order to begin saving information into the Jupiter blockchain, you will need to obtain Jupiter tokens from https://exchange.darcr.us.');
+                      logger.info('\nSuccess! The .env file generated!');
+                      logger.info('\nPlease write down the 12-word passphrase and account address assigned to your app as well as the password assigned for encryption (See the .env file). If you lose your passphrase or your encryption password, you will lose access to all saved data.');
+                      logger.info('\nIn order to begin saving information into the Jupiter blockchain, you will need to send Jupiter to the account in the .env file.');
                       rl.close();
                       return null;
                     });
